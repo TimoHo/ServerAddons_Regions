@@ -1,0 +1,19 @@
+name: TModsServerAddons_Regions
+main: me.tmods.serveraddons.Regions
+version: 1.31
+author: Timo Hocker
+website: http://timosmods.weebly.com
+
+depends:
+ - TModsServerUtils
+
+commands:
+  rwand:
+    description: activate/deactivate region mode
+    usage: /rwand
+  region:
+    description: all region commands
+    usage: /region add/remove/flag/owner/member/info/expand/contract [name] [flag/player/direction] [amount]
+  displayRg:
+    description: display a region
+    usage: /displayRg [region]
