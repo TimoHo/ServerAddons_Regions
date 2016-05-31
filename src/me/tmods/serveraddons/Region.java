@@ -10,6 +10,7 @@ import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
+import me.tmods.api.Particle;
 import me.tmods.serverutils.Methods;
 
 public class Region {
@@ -76,7 +77,7 @@ public class Region {
 				for (double z = minZ;z <= maxZ;z++) {
 					if (x == maxX || x == minX || y == maxY || y == minY || z == maxZ || z == minZ) {
 						Location loc = new Location(world,x,y,z);
-						Methods.playEffect(loc, "Redstone", 0, 1, true);
+						Methods.playEffect(loc, Particle.REDSTONE, 0, 1, true);
 					}
 				}
 			}
