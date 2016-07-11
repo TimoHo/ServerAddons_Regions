@@ -31,10 +31,8 @@ import me.tmods.serverutils.Methods;
 public class Regions extends JavaPlugin implements Listener{
 
 	public File dataf = new File("plugins/TModsServerUtils","data.yml");
-	public File langf = new File("plugins/TModsServerUtils","lang.yml");
 	public File cfgf = new File("plugins/TModsServerUtils","config.yml");
 	public FileConfiguration data = YamlConfiguration.loadConfiguration(dataf);
-	public FileConfiguration lang = YamlConfiguration.loadConfiguration(langf);
 	public FileConfiguration cfg = YamlConfiguration.loadConfiguration(cfgf);
 	public HashMap<Player,Location[]> Players = new HashMap<Player,Location[]>();
 	public HashMap<Player,Region> displayRegion = new HashMap<Player,Region>();
@@ -120,7 +118,7 @@ public class Regions extends JavaPlugin implements Listener{
 		}
 		if (cmd.getName().equalsIgnoreCase("region")) {
 			if (!sender.hasPermission("ServerAddons.regions")) {
-				sender.sendMessage(lang.getString(cfg.getString("language") + ".permdeny"));
+				sender.sendMessage("You don't have access to that command!");
 				return true;
 			}
 			if (args.length < 2) {
@@ -334,7 +332,7 @@ public class Regions extends JavaPlugin implements Listener{
 		}
 		if (cmd.getName().equalsIgnoreCase("rwand") && sender.hasPermission("ServerAddons.regions")) {
 			if (!sender.hasPermission("ServerAddons.regions")) {
-				sender.sendMessage(lang.getString(cfg.getString("language") + ".permdeny"));
+				sender.sendMessage("You don't have access to that command!");
 				return true;
 			}
 			if (sender instanceof Player) {
